@@ -25,4 +25,44 @@ class Session
       @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE sessions SET
+    (
+      type,
+      start_time,
+      duration
+      ) = ($1, $2, $3)"
+    values = [@type, @start_time, @duration]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM sessions
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM sessions
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    return Session.new(result)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM sessions"
+    results = SqlRunner.run(sql)
+    return results.map { |session| Session.new(session) }
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM sessions"
+    SqlRunner.run(sql)
+  end
+
+
+
+
 end

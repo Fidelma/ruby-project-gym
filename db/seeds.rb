@@ -5,6 +5,7 @@ require_relative('../models/schedule')
 require('pry')
 
 Member.delete_all()
+Session.delete_all()
 
 member1 = Member.new({
   'first_name' => 'Fidelma',
@@ -18,6 +19,9 @@ member1 = Member.new({
     'start_time' => '11:00',
     'duration' => '1 hour'
     })
+
+  class1.save()
+
 
   binding.pry
   nil
