@@ -1,11 +1,11 @@
 DROP TABLE scheduling;
 DROP TABLE members;
-DROP TABLE classes;
+DROP TABLE sessions;
 
-CREATE TABLE classes (
+CREATE TABLE sessions (
   id SERIAL4 PRIMARY KEY,
   type VARCHAR(255),
-  time VARCHAR(255),
+  start_time VARCHAR(255),
   duration VARCHAR(255)
 );
 

@@ -1,5 +1,5 @@
 require_relative('../models/member')
-require_relative('../models/class')
+require_relative('../models/session')
 require_relative('../models/schedule')
 
 require('pry')
@@ -12,6 +12,12 @@ member1 = Member.new({
   })
 
   member1.save()
+
+  class1 = Session.new({
+    'type' => 'Dance',
+    'start_time' => '11:00',
+    'duration' => '1 hour'
+    })
 
   binding.pry
   nil
