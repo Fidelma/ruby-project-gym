@@ -1,4 +1,4 @@
-DROP TABLE scheduling;
+DROP TABLE schedule;
 DROP TABLE members;
 DROP TABLE sessions;
 
@@ -15,8 +15,8 @@ CREATE TABLE members (
   last_name VARCHAR(255)
 );
 
-CREATE TABLE scheduling (
+CREATE TABLE schedule (
   id SERIAL4 PRIMARY KEY,
   member_id INT4 REFERENCES members(id) ON DELETE CASCADE,
-  class_id INT4 REFERENCES classes(id) ON DELETE CASCADE
+  session_id INT4 REFERENCES sessions(id) ON DELETE CASCADE
 );
