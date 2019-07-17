@@ -62,6 +62,16 @@ class Session
     SqlRunner.run(sql)
   end
 
+  def attendance()
+    sql = "SELECT members.* FROM members
+    INNER JOIN schedule
+    ON schedule.member_id = members.id
+    WHERE schedule.session_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |member| Member.new(member) }
+  end
+
 
 
 

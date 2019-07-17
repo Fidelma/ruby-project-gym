@@ -39,6 +39,13 @@ member2 = Member.new({
 
     schedule1.save()
 
+  schedule2 = Schedule.new({
+    'member_id' => member2.id,
+    'session_id' => class1.id
+    })
+
+    schedule2.save()
+
 
   binding.pry
   nil
