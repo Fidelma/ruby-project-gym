@@ -59,4 +59,9 @@ class Member
     SqlRunner.run(sql)
   end
 
+  def pretty_name()
+    name = "#{@first_name} #{last_name}"
+    return name
+  end
+
 end
