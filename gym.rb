@@ -41,3 +41,8 @@ post '/gym/members/:id' do
   Member.new(params).update
   redirect to '/gym/members'
 end
+
+post '/gym/members/:id/delete' do
+  Member.delete(params[:id])
+  redirect to '/gym/members'
+end
