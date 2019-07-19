@@ -1,7 +1,11 @@
-<form class="" action="index.html" method="post">
+<form class="add-to-session" action="/gym/members/<%= @member.id %>" method="post">
   <p><%= @member.pretty_name %></p>
   <label for="session">Session:</label>
   <select class="drop-down" name="session">
-
+    <% @sessions.each do |session| %>
+    <option value="<%= session.id %>"><%= session.type %></option>
+    <% end %>
   </select>
+
+  <input type="submit" value="Add to session">
 </form>

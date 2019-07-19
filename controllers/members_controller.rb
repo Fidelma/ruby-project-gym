@@ -47,4 +47,15 @@ get '/gym/members/:id/add' do
   @sessions = Session.all()
   @member = Member.find(params[:id])
   erb(:'members/add')
-end 
+end
+
+post '/gym/members/:id' do
+  @member = Member.find(params[:id])
+  @member.first_name = params
+  @member.update()
+  @session = Session.find(params[:session])
+  schedule = Schedule.new({
+    'member_id' => @member.id,
+    'session_id' => @session.id})
+    schedule.save()
+end

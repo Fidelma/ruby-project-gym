@@ -73,6 +73,14 @@ class Session
     return result.map { |member| Member.new(member) }
   end
 
+  def self.find_by_type(type)
+    sql = "SELECT * FROM sessions
+    WHERE name = $1"
+    values = [type]
+    result = SqlRunner.run(sql, values).first
+    return Session.new(result)
+  end
+
 
 
 
