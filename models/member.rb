@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('schedule')
 
 class Member
 
@@ -63,6 +64,14 @@ class Member
   def pretty_name()
     name = "#{@first_name} #{last_name}"
     return name
+  end
+
+  def add_to_session(id)
+    schedule = Schedule.new({
+      "member_id" => @id,
+      "session_id" => id
+      })
+      schedule.save()
   end
 
 end

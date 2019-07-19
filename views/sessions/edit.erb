@@ -1,10 +1,13 @@
-<form id="edit-member" action="/gym/members/<%= @member.id%>" method="post">
-  <label for="first-name">First Name:</label>
-  <input type="text" name="first_name" id="member-first-name" value="<%= @member.first_name %>">
+<form id="edit-session" action="/gym/sessions/<%= @session.id%>" method="post">
+  <label for="type">Type:</label>
+  <input type="text" name="type" id="session-type" value="<%= @session.type %>">
 
-  <label for="last_name">Last Name:</label>
-  <input type="text" name="last_name" id="member-last-name" value="<%= @member.last_name %>">
+  <label for="start-time">Start time:</label>
+  <input type="text" name="start_time" id="session-start-time" value="<%= @session.start_time %>">
 
-  <input type="submit" value="Update Details">
+  <label for="duration">Duration:</label>
+  <input type="text" name="duration" id="session-duration" value="<%= @session.duration %>">
+
+  <input type="submit" value="Update Session">
 
 </form>

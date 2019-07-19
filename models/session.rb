@@ -31,8 +31,9 @@ class Session
       type,
       start_time,
       duration
-      ) = ($1, $2, $3)"
-    values = [@type, @start_time, @duration]
+      ) = ($1, $2, $3)
+      WHERE id = $4"
+    values = [@type, @start_time, @duration, @id]
     SqlRunner.run(sql, values)
   end
 

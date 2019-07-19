@@ -1,8 +1,9 @@
-<p>First Name: <%= @member.first_name %></p>
-<p>Last Name: <%= @member.last_name %></p>
-<p><a href="/gym/members/ <%= @member.id %>/edit">Edit member info</a></p>
+<p>Type: <%= @session.type %></p>
+<p>Start time: <%= @session.start_time %></p>
+<p>Duration: <%= @session.duration %></p>
+<p><a href="/gym/sessions/ <%= @session.id %>/edit">Edit session info</a></p>
 
-<form id="delete-member" action="/gym/members/<%= @member.id %>/delete" method="post">
-  <input type="submit" value="Delete Member">
+<form id="delete-session" action="/gym/sessions/<%= @session.id %>/delete" method="post">
+  <input type="submit" value="Delete session">
 
 </form>

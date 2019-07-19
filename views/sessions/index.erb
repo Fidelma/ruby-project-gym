@@ -1,8 +1,10 @@
-<% @members.each do |member|  %>
-<p>Name: <%=member.pretty_name  %></p>
-<p><a href="/gym/members/ <%=member.id %>">View Member</a></p>
+<% @sessions.each do |session|  %>
+<p>Type: <%=session.type  %></p>
+<p>Start time: <%= session.start_time %></p>
+<p>Duration: <%= session.duration %></p>
+<p><a href="/gym/sessions/ <%=session.id %>">View Session</a></p>
 
 <hr/>
 <% end %>
 
-<p><a href="/gym/members/new">Add new member</a></p>
+<p><a href="/gym/sessions/new">Add new session</a></p>
