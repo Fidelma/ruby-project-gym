@@ -3,7 +3,7 @@
 
 
 <% @sessions.each do |session| %>
-<p><input type="checkbox" name="type" id="session-checkbox">
+<p><input type="checkbox" name="<%= session.id %>" id="session-checkbox">
   <%= session.type%>,
   <%= session.start_time %>,
   <%= session.duration %></p>

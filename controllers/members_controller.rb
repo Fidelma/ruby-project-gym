@@ -50,12 +50,19 @@ get '/gym/members/:id/add' do
 end
 
 post '/gym/members/:id/add' do
+  binding.pry
   @member = Member.find(params[:id])
   @member.update()
-  @session = Session.find(params[:session])
-  schedule = Schedule.new({
-    'member_id' => @member.id,
-    'session_id' => @session.id})
-  schedule.save()
+  @sessions = []
+  params.each_key do |key|
+    unless key == 'id' then
+      session = Session.find(key.to_i)
+      schedule = Schedule.new({
+          'member_id' => @member.id,
+          'session_id' => session.id})
+      schedule.save()
+      @sessions << session
+    end
+  end
   erb(:'members/create')
 end
