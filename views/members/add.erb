@@ -1,11 +1,15 @@
 <form class="add-to-session" action="/gym/members/<%= @member.id %>/add" method="post">
   <p><%= @member.pretty_name %></p>
-  <label for="session">Session:</label>
-  <select class="drop-down" name="session">
-    <% @sessions.each do |session| %>
-    <option value="<%= session.id %>"><%= session.type %></option>
-    <% end %>
-  </select>
 
-  <input type="submit" value="Add to session">
+
+<% @sessions.each do |session| %>
+<p><input type="checkbox" name="type" id="session-checkbox">
+  <%= session.type%>,
+  <%= session.start_time %>,
+  <%= session.duration %></p>
+<% end %>
+
+<br/>
+
+  <input type="submit" value="Add member to sessions">
 </form>
