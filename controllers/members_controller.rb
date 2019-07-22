@@ -50,13 +50,13 @@ get '/gym/members/:id/add' do
 end
 
 post '/gym/members/:id/add' do
-  @member = Member.find(par ams[:id])
-  @member.first_name = params
+  @member = Member.find(params[:id])
+  binding.pry
   @member.update()
   @session = Session.find(params[:session])
   schedule = Schedule.new({
     'member_id' => @member.id,
     'session_id' => @session.id})
-    schedule.save()
-    redirect to 'gym/members/:id'
+  schedule.save()
+  redirect to 'gym/members'
 end
