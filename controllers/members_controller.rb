@@ -51,12 +51,11 @@ end
 
 post '/gym/members/:id/add' do
   @member = Member.find(params[:id])
-  binding.pry
   @member.update()
   @session = Session.find(params[:session])
   schedule = Schedule.new({
     'member_id' => @member.id,
     'session_id' => @session.id})
   schedule.save()
-  redirect to 'gym/members'
+  erb(:'members/create')
 end
