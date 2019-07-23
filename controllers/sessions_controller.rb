@@ -28,6 +28,7 @@ namespace '/gym/sessions' do
 
   get '/:id' do
     @session = Session.find(params[:id])
+    @attendance = @session.number_of_participants()
     erb(:'sessions/show')
   end
 

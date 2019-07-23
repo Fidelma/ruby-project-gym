@@ -1,7 +1,10 @@
 <p>Type: <%= @session.type %></p>
 <p>Start time: <%= @session.start_time %></p>
 <p>Duration: <%= @session.duration %></p>
+<p>Capacity: <%= @session.capacity %></p>
+<p>Number of participants: <%= @attendance %></p>
 <p><a href="/gym/sessions/ <%= @session.id %>/participants">View all participants</a></p>
+<p><a href="/gym/sessions/<%= @session.id%>/add">Add member to session</a></p>
 <p><a href="/gym/sessions/ <%= @session.id %>/edit">Edit session info</a></p>
 
 <form id="delete-session" action="/gym/sessions/<%= @session.id %>/delete" method="post">
