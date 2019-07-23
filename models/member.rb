@@ -78,7 +78,7 @@ class Member
         "session_id" => id
         })
         schedule.save()
-    end 
+    end
   end
 
   def find_membership()
