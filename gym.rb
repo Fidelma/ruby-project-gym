@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/reloader')
+require('sinatra/namespace')
 require('pry')
 require_relative('./models/member.rb')
 require_relative('./models/session.rb')
