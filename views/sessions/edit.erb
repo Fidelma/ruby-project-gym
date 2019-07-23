@@ -5,6 +5,12 @@
   <label for="start-time">Start time:</label>
   <input type="text" name="start_time" id="session-start-time" value="<%= @session.start_time %>">
 
+  <input type="radio" name="peak" value="peak" id="peak" <%="checked" if @session.peak_off_peak == 'peak' %>>
+  <label for="peak">Peak</label>
+
+  <input type="radio" name="peak" value="off-peak" id="off-peak" <%= 'checked' if @session.peak_off_peak == 'off-peak' %>>
+  <label for="off-peak">Off-peak</label>
+
   <label for="duration">Duration:</label>
   <input type="text" name="duration" id="session-duration" value="<%= @session.duration %>">
 
