@@ -57,10 +57,11 @@ post '/gym/members/:id/add' do
   params.each_key do |key|
     unless key == 'id' then
       session = Session.find(key.to_i)
-      schedule = Schedule.new({
-          'member_id' => @member.id,
-          'session_id' => session.id})
-      schedule.save()
+      @member.add_to_session(session.id)
+      # schedule = Schedule.new({
+      #     'member_id' => @member.id,
+      #     'session_id' => session.id})
+      # schedule.save()
       @sessions << session
     end
   end
