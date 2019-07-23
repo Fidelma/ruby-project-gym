@@ -58,8 +58,8 @@ post '/gym/members/:id/add' do
   params.each_key do |key|
     unless key == 'id' then
       session = Session.find(key.to_i)
-      if session.number_of_participants < session.capacity
-        @member.add_to_session(session.id)
+        result = @member.add_to_session(session.id)
+      if result !=nil
         @sessions << session
       else
         @full_sessions << session

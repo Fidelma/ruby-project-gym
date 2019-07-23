@@ -71,11 +71,14 @@ class Member
   end
 
   def add_to_session(id)
-    schedule = Schedule.new({
-      "member_id" => @id,
-      "session_id" => id
-      })
-      schedule.save()
+    session = Session.find(id)
+    if session.number_of_participants < session.capacity
+      schedule = Schedule.new({
+        "member_id" => @id,
+        "session_id" => id
+        })
+        schedule.save()
+    end 
   end
 
   def find_membership()
