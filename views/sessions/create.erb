@@ -1,4 +1,8 @@
-<p><%= @member.pretty_name %> was added to the
-<%= @session.type %> session at
-<%= @session.start_time %>, Duration:
-<%= @session.duration %></p>
+<% if @member_added !=nil %>
+  <p><%= @member.pretty_name %> was added to the
+  <%= @session.type %> session at
+  <%= @session.start_time %>, Duration:
+  <%= @session.duration %></p>
+<% else %>
+  <p><%= @member.pretty_name %> could not be added to the <%= @session.type %> session as it is fully booked</p>
+<% end %>
