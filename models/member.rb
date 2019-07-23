@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('schedule')
+require_relative('membership')
 
 class Member
 
@@ -75,6 +76,14 @@ class Member
       "session_id" => id
       })
       schedule.save()
+  end
+
+  def find_membership()
+    sql = "SELECT * FROM memberships
+    WHERE id = $1"
+    values = [@membership_id]
+    result = SqlRunner.run(sql, values).first
+    return Membership.new(result)
   end
 
   def self.find_by_name(first_name, last_name)

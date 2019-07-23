@@ -13,6 +13,7 @@ get '/gym/members' do
 end
 
 get '/gym/members/new' do
+  @memberships = Membership.all()
   erb(:'members/new')
 end
 
@@ -24,6 +25,7 @@ end
 
 get '/gym/members/:id' do
   @member = Member.find(params[:id])
+  @membership = @member.find_membership()
   erb(:'members/show')
 end
 
