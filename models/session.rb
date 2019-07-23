@@ -1,16 +1,18 @@
 require_relative('../db/sql_runner.rb')
+require('time')
 
 class Session
 
-  attr_accessor :type, :start_time, :duration, :capacity
+  attr_accessor :type, :start_time, :duration, :capacity, :peak
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @type = options['type']
     @start_time = options['start_time']
+    @peak = options['peak']
     @duration = options['duration']
-    @capacity = options['capacity'].to_i 
+    @capacity = options['capacity'].to_i
   end
 
   def save()
@@ -18,12 +20,13 @@ class Session
     (
       type,
       start_time,
+      peak,
       duration,
       capacity
       )
-      VALUES ($1, $2, $3, $4)
+      VALUES ($1, $2, $3, $4, $5)
       RETURNING id"
-      values = [@type, @start_time, @duration, @capacity]
+      values = [@type, @start_time, @peak, @duration, @capacity]
       @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -32,11 +35,12 @@ class Session
     (
       type,
       start_time,
+      peak,
       duration,
       capacity
-      ) = ($1, $2, $3, $4)
-      WHERE id = $5"
-    values = [@type, @start_time, @duration, @capacity, @id]
+      ) = ($1, $2, $3, $4, $5)
+      WHERE id = $6"
+    values = [@type, @start_time, @peak, @duration, @capacity, @id]
     SqlRunner.run(sql, values)
   end
 

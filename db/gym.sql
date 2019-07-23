@@ -6,7 +6,8 @@ DROP TABLE sessions;
 CREATE TABLE sessions (
   id SERIAL4 PRIMARY KEY,
   type VARCHAR(255),
-  start_time VARCHAR(255),
+  start_time TIME,
+  peak BOOLEAN,
   duration VARCHAR(255),
   capacity INT4 NOT NULL
 );

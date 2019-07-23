@@ -21,7 +21,13 @@ namespace '/gym/sessions' do
   end
 
   post do
+    binding.pry
     @session = Session.new(params)
+    if @session.peak == 'peak'
+      @session.peak = true
+    else
+      @session.peak = false
+    end 
     @session.save()
     redirect to '/gym/sessions'
   end
