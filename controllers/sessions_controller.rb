@@ -42,3 +42,9 @@ post '/gym/sessions/:id/delete' do
   Session.delete(params[:id])
   redirect to '/gym/sessions'
 end
+
+get '/gym/sessions/:id/participants' do
+  @session = Session.find(params[:id])
+  @participants = @session.attendance()
+  erb(:'sessions/attendance')
+end

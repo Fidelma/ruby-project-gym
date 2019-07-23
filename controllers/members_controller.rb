@@ -50,9 +50,7 @@ get '/gym/members/:id/add' do
 end
 
 post '/gym/members/:id/add' do
-  binding.pry
   @member = Member.find(params[:id])
-  @member.update()
   @sessions = []
   params.each_key do |key|
     unless key == 'id' then

@@ -1,0 +1,6 @@
+<p><%= @session.type %> session participants:</p>
+<br/>
+<% @participants.each do |participant| %>
+<p><%= participant.pretty_name %></p>
+
+<% end %>
