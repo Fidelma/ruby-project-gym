@@ -1,7 +1,7 @@
 require("minitest/autorun")
 require_relative("../member.rb")
 
-class TestPizzaOrder < MiniTest::Test
+class TestMember < MiniTest::Test
 
   def setup()
     @member = Member.new({
@@ -21,7 +21,7 @@ class TestPizzaOrder < MiniTest::Test
   #     'last_name' => 'Beagan',
   #     'id' => 19
   #     }, member)
-  # end 
+  # end
 
 
 end

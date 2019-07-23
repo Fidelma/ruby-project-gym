@@ -10,7 +10,7 @@ class Session
     @type = options['type']
     @start_time = options['start_time']
     @duration = options['duration']
-    @capacity = options['capacity']
+    @capacity = options['capacity'].to_i 
   end
 
   def save()
@@ -74,6 +74,15 @@ class Session
     values = [@id]
     result = SqlRunner.run(sql, values)
     return result.map { |member| Member.new(member) }
+  end
+
+  def number_of_participants()
+    sql = "SELECT * FROM Schedule
+    WHERE session_id = $1"
+    values = [@id]
+    sql_result = SqlRunner.run(sql, values)
+    result = sql_result.map { |participant| Schedule.new(participant)}
+    return result.length
   end
 
   def self.find_by_type(type)

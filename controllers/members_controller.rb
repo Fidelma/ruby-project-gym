@@ -54,15 +54,16 @@ end
 post '/gym/members/:id/add' do
   @member = Member.find(params[:id])
   @sessions = []
+  @full_sessions = []
   params.each_key do |key|
     unless key == 'id' then
       session = Session.find(key.to_i)
-      @member.add_to_session(session.id)
-      # schedule = Schedule.new({
-      #     'member_id' => @member.id,
-      #     'session_id' => session.id})
-      # schedule.save()
-      @sessions << session
+      if session.number_of_participants < session.capacity
+        @member.add_to_session(session.id)
+        @sessions << session
+      else
+        @full_sessions << session
+      end
     end
   end
   erb(:'members/create')

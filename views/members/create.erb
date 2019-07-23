@@ -1,4 +1,8 @@
-<p><%= @member.pretty_name %> was successfully added to the following sessions</p>
+<p><%= @member.pretty_name %></p>
 <% @sessions.each do |session| %>
-<p><%= session.type %>, Time: <%= session.start_time %>, Duration: <%= session.duration %> </p>
+  <p>Added to: <%= session.type %>, Time: <%= session.start_time %>, Duration: <%= session.duration %> </p>
+<% end %>
+
+<% @full_sessions.each do |session| %>
+  <p>Could not be added to <%= session.type %> as it is fully booked </p>
 <% end %>
