@@ -27,6 +27,7 @@ require('pry')
   class1 = Session.new({
     'type' => 'Dance',
     'start_time' => '11:00',
+    'peak' => true,
     'duration' => '1 hour',
     'capacity' => 20
     })

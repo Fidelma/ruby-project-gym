@@ -97,6 +97,20 @@ class Session
     return Session.new(result)
   end
 
+  def peak_off_peak()
+    sql = "SELECT * FROM sessions
+    WHERE id = $1"
+    values = [@id]
+    session = SqlRunner.run(sql, values).first
+    result = Session.new(session)
+    if result.peak
+      peak = 'peak'
+    else
+      peak = 'off-peak'
+    end
+    return peak
+  end
+
 
 
 

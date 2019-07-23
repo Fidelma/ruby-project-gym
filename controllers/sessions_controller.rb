@@ -27,7 +27,7 @@ namespace '/gym/sessions' do
       @session.peak = true
     else
       @session.peak = false
-    end 
+    end
     @session.save()
     redirect to '/gym/sessions'
   end
@@ -35,6 +35,7 @@ namespace '/gym/sessions' do
   get '/:id' do
     @session = Session.find(params[:id])
     @attendance = @session.number_of_participants()
+    @peak = @session.peak_off_peak()
     erb(:'sessions/show')
   end
 
