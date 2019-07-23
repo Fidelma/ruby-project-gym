@@ -1,0 +1,13 @@
+<form id="edit-membership" action="/gym/memberships/<%= @membership.id%>" method="post">
+  <label for="type">Type:</label>
+  <input type="text" name="type" id="membership-type" value="<%= @membership.type %>">
+
+  <label for="price">Price:</label>
+  <input type="number" name="price" id="membership-price" value="<%= @membership.price %>">
+
+  <label for="access-hours">Access hours:</label>
+  <input type="text" name="access_hours" id="membership-access" value="<%= @membership.access_hours %>">
+
+  <input type="submit" value="Update Details">
+
+</form>

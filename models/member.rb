@@ -3,24 +3,26 @@ require_relative('schedule')
 
 class Member
 
-  attr_accessor :first_name, :last_name
+  attr_accessor :first_name, :last_name, :membership_id
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
+    @membership_id = options['membership_id']
   end
 
   def save()
     sql = "INSERT INTO members
     (
       first_name,
-      last_name
+      last_name,
+      membership_id
       )
-      VALUES ($1, $2)
+      VALUES ($1, $2, $3)
       RETURNING id"
-    values = [@first_name, @last_name]
+    values = [@first_name, @last_name, @membership_id]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -28,10 +30,11 @@ class Member
     sql = "UPDATE members SET
     (
       first_name,
-      last_name
-      ) = ($1, $2)
-      WHERE id = $3"
-    values = [@first_name, @last_name, @id]
+      last_name,
+      membership_id
+      ) = ($1, $2, $3)
+      WHERE id = $4"
+    values = [@first_name, @last_name, @membership_id, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -1,0 +1,10 @@
+<p>Type: <%= @membership.type %></p>
+<p>Price: <%= @membership.price %></p>
+<p>Access hours: <%= @membership.access_hours %></p>
+
+<p><a href="/gym/memberships/ <%= @membership.id %>/edit">Edit membership</a></p>
+
+<form id="delete-membership" action="/gym/memberships/<%= @membership.id %>/delete" method="post">
+  <input type="submit" value="Delete Membership">
+
+</form>

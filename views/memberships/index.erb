@@ -1,0 +1,8 @@
+<% @memberships.each do |membership|  %>
+<p>Membership: <%=membership.type  %></p>
+<p><a href="/gym/memberships/ <%=membership.id %>">View Membership</a></p>
+
+<hr/>
+<% end %>
+
+<p><a href="/gym/memberships/new">Add new membership type</a></p>
