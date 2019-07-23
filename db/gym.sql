@@ -8,7 +8,7 @@ CREATE TABLE sessions (
   type VARCHAR(255),
   start_time VARCHAR(255),
   duration VARCHAR(255),
-  capacity INT4
+  capacity INT4 NOT NULL
 );
 
 CREATE TABLE memberships (
