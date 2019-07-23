@@ -74,4 +74,16 @@ class Member
       schedule.save()
   end
 
+  def self.find_by_name(first_name, last_name)
+    sql = "SELECT * FROM members
+    WHERE first_name = $1 and last_name = $2"
+    values = [first_name, last_name]
+    result = SqlRunner.run(sql, values).first
+    unless result == nil
+      return Member.new(result)
+    else
+      return nil
+    end
+  end
+
 end

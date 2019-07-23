@@ -14,5 +14,14 @@ class TestPizzaOrder < MiniTest::Test
     assert_equal("Fi Be", @member.pretty_name())
   end
 
+  # def test_find_by_name()
+  #   member = Member.find_by_name('Fidelma', 'Beagan')
+  #   assert_equal({
+  #     'first_name' => 'Fidelma',
+  #     'last_name' => 'Beagan',
+  #     'id' => 19
+  #     }, member)
+  # end 
+
 
 end

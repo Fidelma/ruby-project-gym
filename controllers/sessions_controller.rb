@@ -48,3 +48,23 @@ get '/gym/sessions/:id/participants' do
   @participants = @session.attendance()
   erb(:'sessions/attendance')
 end
+
+get '/gym/sessions/:id/add' do
+  @session = Session.find(params[:id])
+  erb(:'sessions/add')
+end
+
+post '/gym/sessions/:id/add' do
+  @session = Session.find(params[:id])
+  @member = Member.find_by_name(params[:first_name], params[:last_name])
+  unless @member == nil
+    schedule = Schedule.new({
+      'member_id' => @member.id,
+      'session_id' => @session.id
+      })
+    schedule.save()
+    erb(:'sessions/create')
+  else
+    erb(:'sessions/not_a_member')
+  end
+end
