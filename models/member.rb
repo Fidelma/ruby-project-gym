@@ -79,11 +79,12 @@ class Member
     WHERE first_name = $1 and last_name = $2"
     values = [first_name, last_name]
     result = SqlRunner.run(sql, values).first
-    unless result == nil
-      return Member.new(result)
+    unless result == nil then
+      member = Member.new(result)
     else
-      return nil
+      member = nil
     end
+    return member
   end
 
 end
