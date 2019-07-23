@@ -16,11 +16,6 @@ namespace '/gym/sessions' do
   end
 
 
-  # get '/gym/sessions' do
-  #   @sessions = Session.all()
-  #   erb(:'sessions/index')
-  # end
-
   get '/new' do
     erb(:'sessions/new')
   end
