@@ -21,7 +21,7 @@
     <th>Capacity</th>
   </tr>
   <tbody>
-     <% @sessions.each do |session| %>
+     <% @sorted_sessions.each do |session| %>
   <tr>
     <td><%= session.type %></td>
     <td><%= session.start_time %></td>

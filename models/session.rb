@@ -111,7 +111,11 @@ class Session
     return peak
   end
 
-
+  def self.sorted_sessions()
+    sessions = Session.all()
+    sessions_sorted = sessions.sort_by { |k| k.start_time}
+    return sessions_sorted
+  end
 
 
 end

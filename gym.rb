@@ -14,5 +14,6 @@ also_reload('./models/*')
 get '/gym' do
   @members = Member.number_of_members()
   @sessions = Session.all()
+  @sorted_sessions = Session.sorted_sessions()
   erb(:index)
 end
