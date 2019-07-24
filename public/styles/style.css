@@ -86,7 +86,7 @@ p {
 
 .index {
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
   border: 1px solid #dce0e0;
   width: 150px;
   background-color: #dce0e0;
@@ -108,6 +108,7 @@ p {
 
 .link-button.link-padding {
   padding: 10px;
+  /* max-width: 150px; */
 }
 
 a {
@@ -127,4 +128,26 @@ a:hover {
   text-align: center;
   color: grey;
   font-size: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #c3dbd2;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+
+
+th, td {
+  text-align: center;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 2px;
+  width: 15%;
+}
+
+th {
+  background-color: #c3dbd2;
 }

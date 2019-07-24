@@ -1,11 +1,26 @@
 <div class="sessions">
+<table>
 
-<p>Type: <%= @session.type %></p>
-<p>Start time: <%= @session.start_time %></p>
-<p>Duration: <%= @session.duration %></p>
-<p>Capacity: <%= @session.capacity %></p>
-<p>Timing: <%= @peak %></p>
-<p>Number of participants: <%= @attendance %></p>
+<tr>
+  <th><p>Type</p></th>
+  <th><p>Start Time</p></th>
+  <th><p>Duration</p></th>
+  <th><p>Capacity</p></th>
+  <th><p>Timing</p></th>
+  <th><p>Number of Participants</p></th>
+</tr>
+<tbody>
+  <tr>
+    <td><p><%= @session.type %></p></td>
+    <td><p> <%= @session.start_time %></p></td>
+    <td><p> <%= @session.duration %></p></td>
+    <td><p><%= @session.capacity %></p></td>
+    <td><p><%= @peak %></p></td>
+    <td><p> <%= @attendance %></p></td>
+  </tr>
+</tbody>
+
+</table>
 
 <div class="link-button">
 <p><a href="/gym/sessions/ <%= @session.id %>/participants">View all participants</a></p>
@@ -15,7 +30,7 @@
   <p><a href="/gym/sessions/<%= @session.id%>/add">Add member to session</a></p>
 </div>
 
-<div class="link-button">  
+<div class="link-button">
 <p><a href="/gym/sessions/ <%= @session.id %>/edit">Edit session info</a></p>
 </div>
 

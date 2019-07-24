@@ -21,7 +21,6 @@ namespace '/gym/sessions' do
   end
 
   post do
-    binding.pry
     @session = Session.new(params)
     if @session.peak == 'peak'
       @session.peak = true
@@ -46,7 +45,13 @@ namespace '/gym/sessions' do
 
 
   post '/:id' do
-    Session.new(params).update
+    @session = Session.new(params)
+    if @session.peak == 'peak'
+      @session.peak = true
+    else
+      @session.peak = false
+    end
+    @session.update
     redirect to '/gym/sessions'
   end
 
