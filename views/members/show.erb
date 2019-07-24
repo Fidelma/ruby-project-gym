@@ -1,6 +1,17 @@
-<p>First Name: <%= @member.first_name %></p>
-<p>Last Name: <%= @member.last_name %></p>
-<p>Membership Type: <%=@membership.type %></p>
+<div class="small-table">
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Membership Type</th>
+    </tr>
+    <tr>
+      <td><p> <%= @member.first_name %></p></td>
+      <td><p> <%= @member.last_name %></p></td>
+      <td> <p><%= @membership.type %></p></td>
+    </tr>
+ </table>
+</div>
 
 <div class="link-button">
   <p><a href="/gym/members/ <%= @member.id %>/add">Add member to session</a></p>

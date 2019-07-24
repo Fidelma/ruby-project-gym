@@ -135,15 +135,12 @@ a:hover {
   width: 50%;
 }
 
-.sessions table {
+
+.large-table table {
   width: 100%;
 }
 
-.home-page-sessions table {
-  width: 100%;
-}
-
-.home-page-members table {
+.small-table table {
   width: 33%;
 }
 
