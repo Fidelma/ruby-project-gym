@@ -6,9 +6,18 @@
 <p>Capacity: <%= @session.capacity %></p>
 <p>Timing: <%= @peak %></p>
 <p>Number of participants: <%= @attendance %></p>
+
+<div class="link-button">
 <p><a href="/gym/sessions/ <%= @session.id %>/participants">View all participants</a></p>
-<p><a href="/gym/sessions/<%= @session.id%>/add">Add member to session</a></p>
+</div>
+
+<div class="link-button">
+  <p><a href="/gym/sessions/<%= @session.id%>/add">Add member to session</a></p>
+</div>
+
+<div class="link-button">  
 <p><a href="/gym/sessions/ <%= @session.id %>/edit">Edit session info</a></p>
+</div>
 
 <form id="delete-session" action="/gym/sessions/<%= @session.id %>/delete" method="post">
   <input type="submit" value="Delete session">

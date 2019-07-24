@@ -2,7 +2,9 @@
 <p>Price: <%= @membership.price %></p>
 <p>Access hours: <%= @membership.access_hours %></p>
 
+<div class="link-button">
 <p><a href="/gym/memberships/ <%= @membership.id %>/edit">Edit membership</a></p>
+</div>
 
 <form id="delete-membership" action="/gym/memberships/<%= @membership.id %>/delete" method="post">
   <input type="submit" value="Delete Membership">

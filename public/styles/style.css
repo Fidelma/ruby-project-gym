@@ -96,14 +96,18 @@ p {
   background-color: lightgrey;
 }
 
-.add {
-  padding: 10px;
+.link-button {
+  /* padding: 10px; */
   display: inline-block;
 }
 
-.add a {
+.link-button a {
   padding: 7px;
-  background-color: red;
+  background-color: #c3dbd2;
+}
+
+.link-button.link-padding {
+  padding: 10px;
 }
 
 a {
@@ -122,4 +126,5 @@ a:hover {
   vertical-align: bottom;
   text-align: center;
   color: grey;
+  font-size: 10px;
 }
