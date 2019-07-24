@@ -17,14 +17,14 @@ body {
 }
 
 .grid-container {
-  min-height: 90vh;
+  min-height: 95vh;
   display: grid;
   grid-template-areas:
   "sidebar content"
   "footer content";
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 8fr;
   grid-template-rows: auto 3em;
-  padding: 10px;
+  padding: 3px;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   align-items: stretch;
@@ -32,20 +32,21 @@ body {
 }
 .sidebar {
   display: flex;
+  margin: 0px;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 150px;
   background-color: #f1f1f1;
 }
 
 li a {
   display: block;
   color: #000;
-  padding: 8px 16px;
+  padding: 20px 16px;
   text-decoration: none;
 }
 
@@ -57,7 +58,7 @@ li a:hover {
 
 nav {
   display: flex;
-  padding: 10px;
+  padding: 5px;
   align-items: left;
 }
 
@@ -69,11 +70,11 @@ nav {
 } */
 
 h1 {
-  color: red;
+  color: black;
 }
 
 p {
-  color: red;
+  color: black;
 }
 
 .container {
@@ -87,12 +88,29 @@ p {
   padding: 10px;
   margin: 10px;
   border: 1px solid grey;
+  width: 150px;
 }
 
 .index:hover {
   background-color: lightgrey;
 }
 
+.add {
+  padding: 10px;
+  margin: 10px;
+}
+
+.add a {
+  padding-left: 10px;
+}
+
 a {
   display: block;
+}
+
+.footer {
+  padding: 5px;
+  vertical-align: bottom;
+  text-align: center;
+  color: grey;
 }

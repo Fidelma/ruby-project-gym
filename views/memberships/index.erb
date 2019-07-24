@@ -1,8 +1,13 @@
-<% @memberships.each do |membership|  %>
-<p>Membership: <%=membership.type  %></p>
-<p><a href="/gym/memberships/ <%=membership.id %>">View Membership</a></p>
+<div class="container">
 
-<hr/>
+<% @memberships.each do |membership|  %>
+<a href="/gym/memberships/ <%=membership.id %>"><div class="index">
+
+<p>Membership: <%=membership.type  %></p>
+
+</div></a>
+
 <% end %>
+</div>
 
 <p><a href="/gym/memberships/new">Add new membership type</a></p>
