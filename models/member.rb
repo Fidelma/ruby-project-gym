@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner.rb')
 require_relative('schedule')
 require_relative('membership')
+require('pry')
 
 class Member
 
@@ -70,16 +71,6 @@ class Member
     return name
   end
 
-  def add_to_session(id)
-    session = Session.find(id)
-    if session.number_of_participants < session.capacity
-      schedule = Schedule.new({
-        "member_id" => @id,
-        "session_id" => id
-        })
-        schedule.save()
-    end
-  end
 
   def find_membership()
     sql = "SELECT * FROM memberships
@@ -88,6 +79,32 @@ class Member
     result = SqlRunner.run(sql, values).first
     return Membership.new(result)
   end
+
+  def add_to_session(id)
+    membership = self.find_membership()
+    session = Session.find(id)
+    if (session.number_of_participants < session.capacity)
+      if membership.type == 'standard' && session.peak_off_peak == 'off-peak'
+        schedule = Schedule.new({
+          "member_id" => @id,
+          "session_id" => id
+          })
+          schedule.save()
+      elsif membership.type == 'premium'
+        schedule = Schedule.new({
+          "member_id" => @id,
+          "session_id" => id
+          })
+          result = schedule.save()
+      else
+        result = 'ineligible'
+      end
+    else
+      result = 'full'
+    end
+    return result
+  end
+
 
   def self.find_by_name(first_name, last_name)
     sql = "SELECT * FROM members

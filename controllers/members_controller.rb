@@ -58,14 +58,17 @@ namespace '/gym/members' do
     @member = Member.find(params[:id])
     @sessions = []
     @full_sessions = []
+    @ineligible_sessions = []
     params.each_key do |key|
       unless key == 'id' then
         session = Session.find(key.to_i)
           result = @member.add_to_session(session.id)
-        if result !=nil
-          @sessions << session
-        else
+        if result == 'full'
           @full_sessions << session
+        elsif result == 'ineligible'
+          @ineligible_sessions << session
+        else
+          @sessions << session
         end
       end
     end

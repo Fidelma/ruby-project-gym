@@ -103,7 +103,7 @@ class Session
     values = [@id]
     session = SqlRunner.run(sql, values).first
     result = Session.new(session)
-    if result.peak
+    if result.peak == 't'
       peak = 'peak'
     else
       peak = 'off-peak'
