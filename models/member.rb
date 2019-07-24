@@ -102,4 +102,9 @@ class Member
     return member
   end
 
+  def self.number_of_members()
+    members = Member.all()
+    return members.size()
+  end
+
 end

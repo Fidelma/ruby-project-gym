@@ -1,1 +1,35 @@
 <h1>Welcome to the gym!</h1>
+<div class="home-page">
+
+<h3>Members</h3>
+<table>
+  <tr>
+    <th>Current number of Members</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td><p><%= @members %></p></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Upcoming Classes</h3>
+<table>
+  <tr>
+    <th>Session</th>
+    <th>Time</th>
+    <th>Capacity</th>
+  </tr>
+  <tbody>
+     <% @sessions.each do |session| %>
+  <tr>
+    <td><%= session.type %></td>
+    <td><%= session.start_time %></td>
+    <td><%= session.capacity %></td>
+  </tr>
+    <% end %>
+</tbody>
+
+</table>
+
+</div>
