@@ -1,5 +1,29 @@
+.sidebar {
+  grid-area: sidebar;
+  padding-right: 10px;
+
+}
+
 .content {
-  display: inline-grid;
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid-container {
+  min-height: 90vh;
+  display: grid;
+  grid-template-areas:
+  "sidebar content content content"
+  "sidebar content content content"
+  "sidebar content content content"
+  "sidebar footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4fr 4fr 4fr 1fr;
+  padding: 10px
+
 }
 
 nav {

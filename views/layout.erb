@@ -5,20 +5,27 @@
     <title>gym</title>
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
   </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="/gym">Home</a></li>
-        <li><a href="/gym/members">Members</a></li>
-        <li><a href="/gym/sessions">Sessions</a></li>
-        <li><a href="/gym/memberships">Memberships</a></li>
-      </ul>
-    </nav>
-    <div class="content">
+    <body>
+      <div class="grid-container">
+        <div class="sidebar">
+          <nav>
+            <ul>
+              <li><a href="/gym">Home</a></li>
+              <li><a href="/gym/members">Members</a></li>
+              <li><a href="/gym/sessions">Sessions</a></li>
+              <li><a href="/gym/memberships">Memberships</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="content">
 
 
-    <%= yield %>
+        <%= yield %>
 
-  </div>
+      </div>
+      <div class="footer">
+        <footer>fidelma</footer>
+      </div>
+    </div>
   </body>
 </html>
