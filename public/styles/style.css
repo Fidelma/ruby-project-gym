@@ -73,7 +73,8 @@ h1 {
 }
 
 h2 {
-  color: #d1eded;
+  color: #b3d4d4;
+  margin: 0px 0px;
 }
 
 p {
@@ -128,7 +129,10 @@ a:hover {
 }
 
 .footer {
-  padding: 5px;
+  padding-top: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
   vertical-align: bottom;
   text-align: center;
   color: grey;

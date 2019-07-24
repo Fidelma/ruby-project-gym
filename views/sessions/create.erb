@@ -1,8 +1,12 @@
-<% if @member_added !=nil %>
+<% if @member_added == 'ineligible' %>
+<p><%= @member.pretty_name %> could not be added as they are not eligible</p>
+
+<% elsif @member_added == 'full' %>
+<p><%= @member.pretty_name %> could not be added to the <%= @session.type %> session as it is fully booked</p>
+
+<% else %>
   <p><%= @member.pretty_name %> was added to the
   <%= @session.type %> session at
   <%= @session.start_time %>, Duration:
   <%= @session.duration %></p>
-<% else %>
-  <p><%= @member.pretty_name %> could not be added to the <%= @session.type %> session as it is fully booked</p>
 <% end %>

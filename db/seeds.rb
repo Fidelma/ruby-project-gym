@@ -5,9 +5,10 @@ require_relative('../models/membership')
 
 require('pry')
 
-# Schedule.delete_all()
-# # Member.delete_all()
-# Session.delete_all()
+Schedule.delete_all()
+Membership.delete_all()
+Member.delete_all()
+Session.delete_all()
 
 # member1 = Member.new({
 #   'first_name' => 'Fidelma',
