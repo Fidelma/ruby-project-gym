@@ -5,6 +5,14 @@
   <label for="last_name">Last Name:</label>
   <input type="text" name="last_name" id="member-last-name" value="<%= @member.last_name %>">
 
+
+  <label for="membership-type">Membership:</label>
+  <select class="membership-drop-down" name="membership_id">
+    <% @memberships.each do |membership| %>
+    <option value="<%= membership.id %>" <%= "selected" if @member.membership_id == membership.id %>><%= membership.type %></option>
+    <% end %>
+  </select>
+
   <input type="submit" value="Update Details">
 
 </form>

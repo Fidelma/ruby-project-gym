@@ -33,6 +33,7 @@ namespace '/gym/members' do
 
   get '/:id/edit' do
     @member = Member.find(params[:id])
+    @memberships = Membership.all()
     erb(:'members/edit')
   end
 
