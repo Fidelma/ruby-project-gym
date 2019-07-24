@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-GB" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>gym</title>
@@ -10,10 +10,10 @@
         <div class="sidebar">
           <nav>
             <ul>
-              <li><a href="/gym">Home</a></li>
-              <li><a href="/gym/members">Members</a></li>
-              <li><a href="/gym/sessions">Sessions</a></li>
-              <li><a href="/gym/memberships">Memberships</a></li>
+              <li><a href="/gym" class=<%="active" if request.path_info == "/gym"  %>>Home</a></li>
+              <li><a href="/gym/members" class=<%="active" if request.path_info == "/gym/members" %>>Members</a></li>
+              <li><a href="/gym/sessions"class=<%="active" if request.path_info == "/gym/sessions" %>>Sessions</a></li>
+              <li><a href="/gym/memberships"class=<%="active" if request.path_info == "/gym/memberships" %>>Memberships</a></li>
             </ul>
           </nav>
         </div>

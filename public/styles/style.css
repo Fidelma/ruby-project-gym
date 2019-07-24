@@ -53,7 +53,6 @@ li a {
 /* Change the link color on hover */
 li a:hover {
   background-color: #a7d1d1;
-  color: white;
 }
 
 nav {
@@ -104,6 +103,8 @@ p {
 .link-button a {
   padding: 7px;
   background-color: #c3dbd2;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
 .link-button.link-padding {
@@ -119,7 +120,7 @@ a {
 }
 
 a:hover {
-  font-weight: bold;
+  color: #DDD;
 }
 
 .footer {
@@ -150,4 +151,8 @@ th, td {
 
 th {
   background-color: #c3dbd2;
+}
+
+.active {
+  background-color: #a1e6e6;
 }

@@ -14,3 +14,9 @@ also_reload('./models/*')
 get '/gym' do
   erb(:index)
 end
+
+get '/gym' do
+  @members = Members.all()
+  @sessions = Sessions.all()
+  erb(:index)
+end
