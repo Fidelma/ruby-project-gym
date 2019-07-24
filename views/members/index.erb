@@ -1,8 +1,12 @@
-<% @members.each do |member|  %>
-<p>Name: <%=member.pretty_name  %></p>
-<p><a href="/gym/members/ <%=member.id %>">View Member</a></p>
+<div class="container">
 
-<hr/>
-<% end %>
+  <% @members.each do |member|  %>
+  <a href="/gym/members/ <%=member.id %>"><div class="index">
+
+  <p>Name: <%=member.pretty_name  %></p>
+
+</div>
+  <% end %>
+</div></a>
 
 <p><a href="/gym/members/new">Add new member</a></p>

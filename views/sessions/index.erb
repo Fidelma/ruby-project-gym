@@ -1,16 +1,15 @@
-<div class="session-container">
+<div class="container">
 
 <% @sessions.each do |session|  %>
-  <div class="sessions-index">
+  <a href="/gym/sessions/ <%=session.id %>"><div class="index">
     <p>Type: <%=session.type  %></p>
     <p>Start time: <%= session.start_time %></p>
-    <p><a href="/gym/sessions/ <%=session.id %>">View Session</a></p>
 
 
     <p><a href="/gym/sessions/ <%= session.id%>/add">Add member to session</a></p>
 </div>
   <!-- <hr/> -->
   <% end %>
-</div>
+</div></a>
 
 <p><a href="/gym/sessions/new">Add new session</a></p>
