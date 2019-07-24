@@ -40,7 +40,7 @@ nav ul {
   margin: 0;
   padding: 0;
   width: 150px;
-  background-color: #f1f1f1;
+  background-color: #d1eded;
 }
 
 li a {
@@ -52,7 +52,7 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-  background-color: #555;
+  background-color: #a7d1d1;
   color: white;
 }
 
@@ -87,8 +87,9 @@ p {
 .index {
   padding: 10px;
   margin: 10px;
-  border: 1px solid grey;
+  border: 1px solid #dce0e0;
   width: 150px;
+  background-color: #dce0e0;
 }
 
 .index:hover {
@@ -97,15 +98,23 @@ p {
 
 .add {
   padding: 10px;
-  margin: 10px;
+  display: inline-block;
 }
 
 .add a {
-  padding-left: 10px;
+  padding: 7px;
+  background-color: red;
 }
 
 a {
   display: block;
+  color: black;
+  font-weight: 350px;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
 }
 
 .footer {
