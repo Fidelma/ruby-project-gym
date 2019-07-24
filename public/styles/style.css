@@ -131,8 +131,20 @@ a:hover {
   font-size: 10px;
 }
 
-table {
+.home-page-members table {
+  width: 50%;
+}
+
+.sessions table {
   width: 100%;
+}
+
+.home-page-sessions table {
+  width: 100%;
+}
+
+.home-page-members table {
+  width: 33%;
 }
 
 table, th, td {
